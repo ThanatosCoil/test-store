@@ -1,36 +1,93 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Test Shop - React/Next.js Test Task
 
-## Getting Started
+Тестовое задание React Developer с использованием Next.js для создания интернет-магазина с каталогом товаров, корзиной и оформлением заказа.
 
-First, run the development server:
+## Ссылка на лайв проект -
+
+## Реализованная функциональность
+
+✅ Верстка по Figma макету  
+✅ Адаптивная верстка под мобильные устройства и планшеты  
+✅ Отображение отзывов из HTML, обернутого в JSON  
+✅ Получение товаров по API  
+✅ Отображение первой страницы товаров сразу при загрузке  
+✅ Подгрузка остальных страниц товаров AJAX запросом при прокрутке вниз (Infinite Scroll)  
+✅ Изменение кнопки "купить" на кнопки +/- и поле ввода количества товара  
+✅ Обновление информации в корзине при изменении количества товаров  
+✅ Сохранение товаров и введенного номера телефона при перезагрузке страницы  
+✅ Маска в поле для телефона  
+✅ Валидация телефона при оформлении заказа  
+✅ Отправка запроса на сервер при оформлении заказа  
+✅ Отображение попапа об успешном оформлении заказа
+
+## Дополнительные улучшения
+
+- Прелоадеры для всех динамических компонентов (товары, отзывы, корзина в шапке)
+- Защита от XSS атак при отображении отзывов через DOMPurify
+- Обработка длинных названий товаров через line-clamp
+- Адаптивная сетка товаров, меняющаяся в зависимости от размера экрана
+- Поддержка серверного рендеринга (SSR) для быстрой загрузки
+- Использование TypeScript для типизации и улучшения поддерживаемости кода
+- Модульная архитектура с разделением компонентов, API и хранилища данных
+- Доступность (accessibility) при навигации с клавиатуры
+- Удаление товара из корзины при уменьшении количества до 0
+- Синхронизация состояния между разными компонентами (карточка товара и корзина)
+- Анимированные hover-эффекты для карточек товаров
+- Информативный блок корзины в шапке сайта с иконкой и общей суммой
+- Отображение состава заказа в модальном окне успешного оформления
+
+## Технологии
+
+- Next.js 15 (App Router)
+- React 19
+- TypeScript
+- Tailwind CSS
+- Zustand (для управления состоянием)
+- React Input Mask (для маски телефона)
+- Axios (для HTTP запросов)
+- React Intersection Observer (для бесконечной прокрутки)
+- DOMPurify (для санитизации HTML)
+
+## Как запустить проект
+
+1. Клонировать репозиторий:
+
+   ```bash
+   git clone https://github.com/your-username/test-react.git
+   cd test-react
+   ```
+
+2. Установить зависимости:
+
+   ```bash
+   npm install
+   ```
+
+3. Запустить в режиме разработки:
+
+   ```bash
+   npm run dev
+   ```
+
+4. Открыть [http://localhost:3000](http://localhost:3000) в браузере
+
+## Сборка для production
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run build
+npm run start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Структура проекта
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `/src/api` - Функции для работы с API
+- `/src/app` - App Router и глобальные стили
+- `/src/components` - React компоненты
+  - `/ui` - Переиспользуемые UI компоненты
+  - `/product` - Компоненты товаров
+  - `/cart` - Компоненты корзины и оформления заказа
+  - `/reviews` - Компоненты отзывов
+  - `/layout` - Компоненты макета страницы
+- `/src/lib` - Вспомогательные функции
+- `/src/store` - Хранилище состояния (Zustand)
+- `/src/types` - TypeScript типы и интерфейсы
