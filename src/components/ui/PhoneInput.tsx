@@ -1,6 +1,6 @@
 "use client";
 
-import React, { forwardRef, useState, useEffect } from "react";
+import React, { forwardRef } from "react";
 import { twMerge } from "tailwind-merge";
 
 export interface PhoneInputProps

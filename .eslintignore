@@ -1,0 +1,15 @@
+# Игнорируем сгенерированные файлы
+node_modules
+.next
+out
+build
+dist
+
+# Игнорируем определенные типы файлов
+*.d.ts
+next-env.d.ts
+
+# Игнорируем конфигурационные файлы
+next.config.ts
+postcss.config.mjs
+tailwind.config.js 
