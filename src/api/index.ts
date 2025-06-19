@@ -1,10 +1,8 @@
 import axios from "axios";
 import { OrderRequest, OrderResponse, ProductsResponse, Review } from "@/types";
 
-const API_BASE_URL = "http://o-complex.com:1337";
-
+// Используем относительные URL для обращения к нашим API роутам
 const api = axios.create({
-  baseURL: API_BASE_URL,
   headers: {
     "Content-Type": "application/json",
   },
@@ -15,8 +13,9 @@ export const getProducts = async (
   pageSize: number = 20
 ): Promise<ProductsResponse> => {
   try {
+    // Используем локальный API роут
     const response = await api.get<ProductsResponse>(
-      `/products?page=${page}&page_size=${pageSize}`
+      `/api/products?page=${page}&page_size=${pageSize}`
     );
     return response.data;
   } catch (error) {
@@ -27,7 +26,8 @@ export const getProducts = async (
 
 export const getReviews = async (): Promise<Review[]> => {
   try {
-    const response = await api.get<Review[]>("/reviews");
+    // Используем локальный API роут
+    const response = await api.get<Review[]>("/api/reviews");
     return response.data;
   } catch (error) {
     console.error("Error fetching reviews:", error);
@@ -39,10 +39,14 @@ export const submitOrder = async (
   orderData: OrderRequest
 ): Promise<OrderResponse> => {
   try {
-    const response = await api.post<OrderResponse>("/order", orderData);
+    // Используем локальный API роут
+    const response = await api.post<OrderResponse>("/api/order", orderData);
     return response.data;
   } catch (error) {
     console.error("Error submitting order:", error);
-    return { success: 0, error: "Failed to submit order" };
+    return {
+      success: 0,
+      error: "Не удалось отправить заказ. Пожалуйста, попробуйте позже.",
+    };
   }
 };
