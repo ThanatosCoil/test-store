@@ -2,7 +2,7 @@
 
 Тестовое задание React Developer с использованием Next.js для создания интернет-магазина с каталогом товаров, корзиной и оформлением заказа.
 
-## Ссылка на лайв проект -
+## Ссылка на лайв проект - [Test Shpop](https://vercel.com/thanatoscoils-projects/test-store/85fi7SDKD6AriJLSVU6EdhZHLDZL)
 
 ## Реализованная функциональность
 
